@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>myviz</name>
+  <version>0.0.1</version>
+  <description>
+     Custom Qt5 with Rviz2
+  </description>
+  <maintainer email="mboletboixeda@gmail.com">
+      MartiBolet
+  </maintainer>
+  
+  <license>Apache License 2.0</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <!--QT-->
+  <build_depend>qtbase5-dev</build_depend>
+  <exec_depend>libqt5-core</exec_depend>
+  <exec_depend>libqt5-gui</exec_depend>
+  <exec_depend>libqt5-widgets</exec_depend>
+
+  <!--ROS2-->
+  <build_depend>rclcpp</build_depend>
+  <build_depend>rclcpp_components</build_depend>
+  <build_depend>rviz_common</build_depend>
+  <build_depend>rviz_default_plugins</build_depend>
+  <build_depend>rviz_ogre_vendor</build_depend>
+  <build_depend>rviz_rendering</build_depend>
+
+  <export>
+		<build_type>ament_cmake</build_type>
+	</export>
+
+</package>
