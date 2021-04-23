@@ -17,7 +17,6 @@
 #include "rviz_common/ros_integration/ros_client_abstraction.hpp"
 #include "rviz_common/ros_integration/ros_node_abstraction.hpp"
 #include "rviz_common/visualization_manager.hpp"
-#include "rviz_common/panel_factory.hpp"
 #include "rviz_common/visualization_frame.hpp"
 
 
@@ -28,18 +27,19 @@ class MyViz: public QMainWindow
     MyViz(rviz_common::VisualizationFrame* frame,
          rviz_common::ros_integration::RosNodeAbstractionIface::WeakPtr ros_node_abs,
          QWidget* parent = 0 );
-    virtual ~MyViz();
+    ~MyViz();
 
     void setApp(QApplication * app);
     // Call initialize() after setApp
     void initialize();
 
-  private Q_SLOTS:
+  private slots:
     void setThickness( int thickness_percent );
     void setCellSize( int cell_size_percent );
 
   private:
     // Visualization vars
+    QWidget* central_widget;
     QVBoxLayout* main_layout;
 
     // Rviz vars

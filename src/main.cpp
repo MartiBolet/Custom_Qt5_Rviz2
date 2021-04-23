@@ -17,12 +17,12 @@ int main(int argc, char **argv)
     // Create MainWindow and initialize it
     auto mainWind_ = std::make_shared<MyViz>(frame, ros_node_abs);
     mainWind_->setApp(&app);
+    mainWind_->initialize();
     mainWind_->setWindowTitle("MyViz");
     mainWind_->show();
 
     while (rclcpp::ok()) {
         app.processEvents();
     }
-    rclcpp::shutdown();
     return 0;
 }

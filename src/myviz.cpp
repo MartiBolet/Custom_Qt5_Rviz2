@@ -22,14 +22,11 @@ MyViz::MyViz(rviz_common::VisualizationFrame* frame,
     controls_layout->addWidget( cell_size_label, 1, 0 );
     controls_layout->addWidget( cell_size_slider, 1, 1 );
 
-    std::cout << "Hola que tal 0.25" << std::endl;
-
     // Set Layout of Render Panel
     main_layout = new QVBoxLayout;
     main_layout->addLayout( controls_layout );
-    std::cout << "Hola que tal 0.5" << std::endl;
 
-    QWidget * central_widget = new QWidget(this);
+    central_widget = new QWidget();
     main_layout->setSpacing(0);
     main_layout->setMargin(0);
 
@@ -39,11 +36,8 @@ MyViz::MyViz(rviz_common::VisualizationFrame* frame,
     // connect( thickness_slider, SIGNAL( valueChanged( int )), this, SLOT( setThickness( int )));
     // connect( cell_size_slider, SIGNAL( valueChanged( int )), this, SLOT( setCellSize( int )));
 
-    std::cout << "Hola que tal 0.75" << std::endl;
-
     thickness_slider->setValue( 25 );
     cell_size_slider->setValue( 10 );
-    std::cout << "Hola que tal 1" << std::endl;
 }
 
 MyViz::~MyViz()
@@ -53,15 +47,12 @@ MyViz::~MyViz()
 
 void MyViz::setApp(QApplication * app){
     frame_->setApp(app);
-    frame_->initialize(ros_node_abs_, "");
-    
-    // With the frame initialize, the rest of the Window can be initialized too
-    initialize();
-
 }
 
 void MyViz::initialize(){
     // Initialize the Rviz2
+    frame_->initialize(ros_node_abs_, "");
+
     rviz_common::RenderPanel* render_panel_;
     // render_panel_ = new rviz_common::RenderPanel();
     // render_panel_->getRenderWindow()->initialize();
