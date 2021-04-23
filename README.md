@@ -12,12 +12,17 @@ cd $HOME
 mkdir myviz_ws && cd myviz_ws
 git clone https://github.com/MartiBolet/rviz
 git clone https://github.com/MartiBolet/Custom_Qt5_Rviz2
+cd rviz
+git checkout -b develop_integration_with_qt origin/develop_integration_with_qt
+
 # Build
+cd $HOME/myrviz_ws
 colcon build --symlink-install
-> After compile rviz for first time, you can add `COLCON_IGNORE` files inside the individual packages of `rviz` to dont recompile all when you make a small change.
 # Install
 source ./install/setup.bash
 ```
+> After compile rviz for first time, you can add `COLCON_IGNORE` files inside the individual packages of `rviz` to dont recompile all when you make a small change.
+
 To run the window:
 ```
 ros2 run myviz myviz
