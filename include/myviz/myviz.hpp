@@ -35,6 +35,8 @@ class MyViz: public QMainWindow
   private slots:
     void setThickness( int thickness_percent );
     void setCellSize( int cell_size_percent );
+    void closeEvent(QCloseEvent *event);
+
 
   private:
     // Visualization vars
