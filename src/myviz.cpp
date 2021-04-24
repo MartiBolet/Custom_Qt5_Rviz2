@@ -68,7 +68,6 @@ MyViz::MyViz(rviz_common::VisualizationFrame* frame,
 
 MyViz::~MyViz()
 {
-    ///TODO: Not it is not closing properly 
     delete frame_;
 }
 

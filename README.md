@@ -47,12 +47,6 @@ From this [answer](https://answers.ros.org/question/286985/libgl-error-failed-to
 
 
 
-## Known issues
-
-- When you close the MainWindow from Qt cross icon, it is not properly closed and needs to be killed from terminal.
-
-
-
 ## Contributors:
 
 Co-workers: [@albertarla](https://github.com/albertarla), [@iggyrrieta](https://github.com/iggyrrieta).
