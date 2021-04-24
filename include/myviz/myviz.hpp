@@ -1,5 +1,5 @@
 #ifndef MY_VIZ_HPP
-#define MY_VIZZ_HPP
+#define MY_VIZ_HPP
 
 // Qt impots
 #include <QLabel>
@@ -25,13 +25,12 @@ class MyViz: public QMainWindow
     Q_OBJECT
   public:
     MyViz(rviz_common::VisualizationFrame* frame,
-         rviz_common::ros_integration::RosNodeAbstractionIface::WeakPtr ros_node_abs,
-         QWidget* parent = 0 );
+          rviz_common::ros_integration::RosNodeAbstractionIface::WeakPtr ros_node_abs,
+          QWidget* parent = 0 );
     ~MyViz();
 
-    void setApp(QApplication * app);
-    // Call initialize() after setApp
-    void initialize();
+    /// TODO: Add and set all options (reference_frame...)
+    void DisplayGrid(); 
 
   private slots:
     void setThickness( int thickness_percent );
@@ -50,4 +49,4 @@ class MyViz: public QMainWindow
     rviz_common::ros_integration::RosNodeAbstractionIface::WeakPtr ros_node_abs_;
 };
 
-#endif // MY_VIZZ_HPP
+#endif // MY_VIZ_HPP
