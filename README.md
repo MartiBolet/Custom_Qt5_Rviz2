@@ -1,4 +1,7 @@
 # Custom_Qt5_Rviz2
+
+## UPDATE: The proper way of doing this is done in this [repository](https://github.com/mjeronimo/rviz_embed_test) from [@mjeronimo](https://github.com/mjeronimo).
+
 In this repository there is an example of how to implement the `RenderPanel` of [`rviz2`](https://github.com/ros2/rviz). This is a workaround and it's not the best solution but it's the only way I found that work.
 The two repositories are for distribution `ros2 foxy`.
 For this to work, I made a small changes to the `rviz` source code, these can be found on my [fork](https://github.com/MartiBolet/rviz).
