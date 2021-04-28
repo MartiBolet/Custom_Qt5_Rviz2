@@ -18,6 +18,7 @@
 #include "rviz_common/ros_integration/ros_node_abstraction.hpp"
 #include "rviz_common/visualization_manager.hpp"
 #include "rviz_common/visualization_frame.hpp"
+#include "rviz_common/displays_panel.hpp"
 
 
 class MyViz: public QMainWindow
@@ -41,7 +42,7 @@ class MyViz: public QMainWindow
   private:
     // Visualization vars
     QWidget* central_widget;
-    QVBoxLayout* main_layout;
+    QHBoxLayout* main_layout;
 
     // Rviz vars
     rviz_common::VisualizationFrame* frame_;

@@ -36,16 +36,25 @@ MyViz::MyViz(rviz_common::VisualizationFrame* frame,
     /*-----------------------------
         ADD VISUALIZATION
     -----------------------------*/
-    main_layout = new QVBoxLayout;
-    main_layout->addLayout(controls_layout);
+    QVBoxLayout* left_layout = new QVBoxLayout;
+    left_layout->addLayout(controls_layout);
+    left_layout->setSpacing(0);
+    left_layout->setMargin(0);
+    left_layout->addWidget(render_panel_);
+
+    QVBoxLayout* right_layout = new QVBoxLayout;
+    // TODO: Add DisplaysPanel
+    rviz_common::DisplaysPanel* panel = new rviz_common::DisplaysPanel(ros_node_abs_, manager_, nullptr);
+    panel->onInitialize();
+    right_layout->addWidget(panel);
+
+    main_layout = new QHBoxLayout;
+    main_layout->addLayout(left_layout);
+    main_layout->addLayout(right_layout);
 
     central_widget = new QWidget();
-    main_layout->setSpacing(0);
-    main_layout->setMargin(0);
-
     central_widget->setLayout(main_layout);
     setCentralWidget(central_widget);
-    main_layout->addWidget(render_panel_);
 
     /*-----------------------------
             SIGNALS &
